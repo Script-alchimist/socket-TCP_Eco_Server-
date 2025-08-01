@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Styles personnalisés pour le défilement et une meilleure esthétique */
+        body {
+            background-color: #e0e0e0; /* Couleur de fond légèrement grise */
+        }
+        #messages {
+            /* Scrollbar personnalisée pour WebKit (Chrome, Safari) */
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #ccc;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: #f1f1f1;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased flex items-center justify-center min-h-screen">
+
+    <div class="chat-container bg-white rounded-lg shadow-xl w-full max-w-md mx-auto my-8 flex flex-col h-[700px]">
+        <div class="chat-header bg-teal-600 text-white p-4 rounded-t-lg flex items-center justify-between shadow-md">
+            <img src="" alt="" class="border-2 rounded-full mr-3 px-6 py-6">
+            <div>
+                <h2 class="text-lg font-semibold">Script</h2>
+                <p class="text-sm text-green-100">Connecté au Serveur</p>
+            </div>
+        </div>
+
+        <div id="messages" class="flex-1 p-4 overflow-y-auto space-y-4 font-serif"></div>
+
+        <div class="chat-input p-3 border-t border-gray-200 flex items-center">
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Écrire un message..."
+                class="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+            <button
+                id="sendButton"
+                class="ml-3 px-6 py-3 bg-teal-500 hover:bg-teal-700 focus:bg-green-600 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out"
+            >
+                Envoyer
+            </button>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
